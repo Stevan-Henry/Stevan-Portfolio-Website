@@ -1,0 +1,248 @@
+/* Import Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap");
+
+/* General Styles */
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #0d1117;
+  color: #c9d1d9;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #ff7eb3, #7f5af0);
+  color: white;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+header h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* Sections */
+section {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #7f5af0;
+}
+
+/* About Section */
+#about {
+  text-align: left;
+  display: flex;
+  justify-content: space-around;
+}
+
+.about-text {
+  text-align: left;
+  width: 70%;
+}
+
+.style-img {
+  width: 70%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-left: 40%;
+  box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.style-img:hover {
+  transform: scale(1.05);
+}
+
+/* Project Section */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  background: #1e1e2f;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.project:hover {
+  transform: translateY(-5px);
+}
+
+.project h3 {
+  margin-bottom: 10px;
+  color: #ff7eb3;
+}
+
+.project p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Styled iFrame Placeholder */
+.project-frame {
+  background: #0d1117;
+  border-radius: 5px;
+  border: 2px solid #7f5af0;
+}
+
+.linkButton {
+  display: flex;
+  gap: 30px;
+}
+
+/* Contact Section */
+#contact {
+  text-align: center;
+}
+
+#contact a {
+  color: #ff7eb3;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+#contact a:hover {
+  color: #7f5af0;
+  text-decoration: underline;
+}
+
+.button {
+  display: inline;
+  justify-content: center;
+  padding: 10px 20px;
+  margin: auto;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  background: linear-gradient(135deg, #6e57e0, #3f8efc);
+  border-radius: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.button:active {
+  transform: translateY(1px);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #161b22;
+  color: #888;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.5rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  section {
+    padding: 40px 20px;
+  }
+}
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 10px rgba(0, 255, 170, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(0, 255, 170, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(0, 255, 170, 0.2);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.project {
+  animation: pulseGlow 2s infinite alternate ease-in-out;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+  animation: bounceIn 0.8s ease-out;
+  opacity: 1;
+  transform: translateY(0);
+}
