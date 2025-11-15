@@ -5,74 +5,340 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stevan Henry | Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script defer src="script.js"></script>
 </head>
 <body>
-    <header class="fade-in">
-        <h1>Stevan Henry</h1>
-        <p>Software Engineer | Web Developer | Problem Solver</p>
-    </header>
-    
-    <section id="about" class="fade-in about-section">
-        <div class="about-text">
-            <h2>About Me</h2>
-            <p>I am an aspiring software engineer with a strong foundation in computer science, passionate about designing and implementing innovative solutions. I specialize in front-end and full-stack development, with experience in JavaScript, React, Python, and Flask.</p>
-            <p>My expertise extends to building scalable web applications and optimizing user experiences through modern design principles. I enjoy collaborating with teams, solving complex problems, and continuously learning to stay ahead in the ever-evolving tech landscape.</p>
-            <p>Currently, I am pursuing a Bachelor's degree in Computer Science at Virginia Commonwealth University, with coursework in AI, software engineering, and data structures. I am eager to apply my skills in impactful projects and real-world applications.</p>
-        </div>
-        <div class="about-image">
-            <img src="./images/portfolio-img.jpg" alt="Stevan Henry" class="style-img">
-            <img src="./images/portfolio-img2.jpg" alt="Stevan Henry" class="style-img">
-            <img src="./images/portfolio-img3.jpg" alt="Stevan Henry" class="style-img">
-            
-        </div>
-    </section>
-    
-    <section id="projects" class="fade-in">
-        <h2>Projects</h2>
-        <div class="project-grid">
+    <!-- Animated Background -->
+    <div class="background-animation">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+    </div>
 
-            <!-- Extra Project spots-->
-             
-            <div class="project fade-in">
-                <h3>E&D Water Restoration</h3>
-                <img src="./images/E&D-img.png" width="100%" height="200px" frameborder="0" class="project-frame">
-                <p>Developed a modern, responsive website with integrated Google Maps and analytics to enhance business visibility.</p>
-                <div class="linkButton">
-                    <a href="https://github.com/Stevan-Henry/E-D-water-damage-and-restoration" target="_blank" class="button">GitHub</a>
-                    <a href="https://www.24hourwaterdamages.com/" target="_blank" class="button">Live Site</a>
+    <!-- Floating particles -->
+    <canvas id="particles"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">SH</a>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+        <div class="hero-content fade-in">
+            <div class="hero-text">
+                <h1 class="glitch" data-text="Stevan Henry">Stevan Henry</h1>
+                <div class="typing-container">
+                    <p class="typing-text"></p>
+                    <span class="cursor">|</span>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">
+                        <span>View My Work</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <span>Get In Touch</span>
+                        <i class="fas fa-envelope"></i>
+                    </a>
                 </div>
             </div>
-            <div class="project fade-in">
-                <h3>PRify</h3>
-                <img src="./images/prify.png"  height="200px" frameborder="0" class="project-frame">
-                <p>PRify helps you track your workouts, monitor your progress, and break your personal records with an intuitive mobile interface.</p>
-                <div class="linkButton">
-                    <a href="https://github.com/d48/workout-tracker-prify" target="_blank" class="button">GitHub</a>
-                    <a href="https://prify.app/" target="_blank" class="button">Live Site</a>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="about-section fade-in">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">01.</span>
+                About Me
+                <div class="title-underline"></div>
+            </h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="reveal">I am an aspiring software engineer with a strong foundation in computer science, passionate about designing and implementing innovative solutions. I specialize in front-end and full-stack development, with experience in JavaScript, React, Python, and Flask.</p>
+                    <p class="reveal">My expertise extends to building scalable web applications and optimizing user experiences through modern design principles. I enjoy collaborating with teams, solving complex problems, and continuously learning to stay ahead in the ever-evolving tech landscape.</p>
+                    <p class="reveal">Currently, I am pursuing a Bachelor's degree in Computer Science at Virginia Commonwealth University, with coursework in AI, software engineering, and data structures. I am eager to apply my skills in impactful projects and real-world applications.</p>
                 </div>
-            </div>
-            <div class="project fade-in">
-                <h3>AGIE Website (In progress)</h3>
-                <img src="./images/agie.png" width="100%"  frameborder="0" class="project-frame">
-                <p>A React and Next.js application promoting gender equity in STEMM leadership, featuring a dynamic UI and efficient state management.</p>
-                <div class="linkButton">
-                    <a href="https://github.com/VCU-CS-Capstone/CS-25-307-AGIE-follow-on" target="_blank" class="button">GitHub</a>
-                    
+                <div class="about-images">
+                    <div class="image-stack">
+                        <div class="image-wrapper reveal">
+                            <img src="./images/portfolio-img.jpg" alt="Stevan Henry" class="style-img">
+                            <div class="image-overlay"></div>
+                        </div>
+                        <div class="image-wrapper reveal">
+                            <img src="./images/portfolio-img2.jpg" alt="Stevan Henry" class="style-img">
+                            <div class="image-overlay"></div>
+                        </div>
+                        <div class="image-wrapper reveal">
+                            <img src="./images/portfolio-img3.jpg" alt="Stevan Henry" class="style-img">
+                            <div class="image-overlay"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    
-    <section id="contact" class="fade-in">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:Stevanh237@gmail.com">Stevanh237@gmail.com</a></p>
-        <p>GitHub: <a href="https://github.com/Stevan-Henry" target="_blank">github.com/Stevan-Henry</a></p>
-        <p>LinkedIn: <a href="https://linkedin.com/in/stevan-henry" target="_blank">linkedin.com/in/stevan-henry</a></p>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section fade-in">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">02.</span>
+                Skills & Technologies
+                <div class="title-underline"></div>
+            </h2>
+            <div class="skills-grid">
+                <div class="skill-card reveal">
+                    <div class="skill-icon"><i class="fab fa-js"></i></div>
+                    <h3>JavaScript</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="90"></div>
+                    </div>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="skill-icon"><i class="fab fa-react"></i></div>
+                    <h3>React</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="85"></div>
+                    </div>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="skill-icon"><i class="fab fa-python"></i></div>
+                    <h3>Python</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="88"></div>
+                    </div>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="skill-icon"><i class="fab fa-node"></i></div>
+                    <h3>Node.js</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="80"></div>
+                    </div>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="skill-icon"><i class="fab fa-html5"></i></div>
+                    <h3>HTML/CSS</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="95"></div>
+                    </div>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="skill-icon"><i class="fab fa-git-alt"></i></div>
+                    <h3>Git</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="85"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-    
-    <footer class="fade-in">
-        <p>&copy; 2025 Stevan Henry. All rights reserved.</p>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section fade-in">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">03.</span>
+                Featured Projects
+                <div class="title-underline"></div>
+            </h2>
+            <div class="project-grid">
+                <div class="project-card reveal featured">
+                    <div class="project-image">
+                        <img src="./images/whynotus.png" alt="WhyNotUs.ai">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://whynotus.ai" target="_blank" class="project-link" title="Visit Site">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-label">Featured Project</div>
+                        <h3>WhyNotUs.ai</h3>
+                        <div class="project-description">
+                            <p>An innovative AI-powered platform that leverages cutting-edge machine learning to deliver intelligent solutions and insights.</p>
+                        </div>
+                        <div class="project-tech">
+                            <span>AI/ML</span>
+                            <span>React</span>
+                            <span>Next.js</span>
+                            <span>TypeScript</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal">
+                    <div class="project-image">
+                        <img src="./images/chargen.png" alt="CharGen.art">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://www.chargen.art/" target="_blank" class="project-link" title="Visit Site">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>CharGen.art</h3>
+                        <div class="project-description">
+                            <p>A creative AI art generation platform that transforms text prompts into stunning character artwork using advanced generative models.</p>
+                        </div>
+                        <div class="project-tech">
+                            <span>AI Art</span>
+                            <span>Generative AI</span>
+                            <span>Web3</span>
+                            <span>React</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal">
+                    <div class="project-image">
+                        <img src="./images/E&D-img.png" alt="E&D Water Restoration">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/Stevan-Henry/E-D-water-damage-and-restoration" target="_blank" class="project-link" title="View Code">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://www.24hourwaterdamages.com/" target="_blank" class="project-link" title="Visit Site">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>E&D Water Restoration</h3>
+                        <div class="project-description">
+                            <p>Developed a modern, responsive website with integrated Google Maps and analytics to enhance business visibility.</p>
+                        </div>
+                        <div class="project-tech">
+                            <span>HTML/CSS</span>
+                            <span>JavaScript</span>
+                            <span>Google Maps API</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal featured">
+                    <div class="project-image">
+                        <img src="./images/prify.png" alt="PRify">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/d48/workout-tracker-prify" target="_blank" class="project-link" title="View Code">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://prify.app/" target="_blank" class="project-link" title="Visit Site">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-label">Featured Project</div>
+                        <h3>PRify</h3>
+                        <div class="project-description">
+                            <p>PRify helps you track your workouts, monitor your progress, and break your personal records with an intuitive mobile interface.</p>
+                        </div>
+                        <div class="project-tech">
+                            <span>React Native</span>
+                            <span>Mobile</span>
+                            <span>Firebase</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal">
+                    <div class="project-image">
+                        <img src="./images/agie.png" alt="AGIE Website">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/VCU-CS-Capstone/CS-25-307-AGIE-follow-on" target="_blank" class="project-link" title="View Code">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-label">In Progress</div>
+                        <h3>AGIE Website</h3>
+                        <div class="project-description">
+                            <p>A React and Next.js application promoting gender equity in STEMM leadership, featuring a dynamic UI and efficient state management.</p>
+                        </div>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>Next.js</span>
+                            <span>TypeScript</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section fade-in">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">04.</span>
+                Get In Touch
+                <div class="title-underline"></div>
+            </h2>
+            <div class="contact-content reveal">
+                <p class="contact-description">I'm currently looking for new opportunities and my inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
+
+                <div class="contact-methods">
+                    <a href="mailto:Stevanh237@gmail.com" class="contact-card">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <h3>Email</h3>
+                        <p>Stevanh237@gmail.com</p>
+                    </a>
+
+                    <a href="https://github.com/Stevan-Henry" target="_blank" class="contact-card">
+                        <div class="contact-icon"><i class="fab fa-github"></i></div>
+                        <h3>GitHub</h3>
+                        <p>github.com/Stevan-Henry</p>
+                    </a>
+
+                    <a href="https://linkedin.com/in/stevan-henry" target="_blank" class="contact-card">
+                        <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
+                        <h3>LinkedIn</h3>
+                        <p>linkedin.com/in/stevan-henry</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Stevan Henry. Designed & Built with passion</p>
+        <div class="social-links">
+            <a href="https://github.com/Stevan-Henry" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/stevan-henry" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:Stevanh237@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
     </footer>
+
+    <!-- Scroll to top button -->
+    <button id="scrollTop" class="scroll-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 </body>
 </html>
